@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://g13s05jakv2d"]
+
+[ext_resource type="FontFile" uid="uid://6gtygnegavtp" path="res://Fonts/123_punk.Text_FontDefault_Default.ttf" id="1_ytuxx"]
+
+[sub_resource type="GDScript" id="GDScript_lmmwa"]
+resource_name = "Subir Creditos"
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	print($RichTextLabel2.position.y)
+	$RichTextLabel2.position.y -= 0.4
+	
+	if Input.is_anything_pressed():
+		await get_tree().create_timer(1).timeout
+		get_tree().change_scene_to_file(\"res://Misc (UI, etc)/MainMenu.tscn\")
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_lmmwa")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -389.0
+offset_top = 324.0
+offset_right = 390.0
+offset_bottom = 2025.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_ytuxx")
+theme_override_font_sizes/normal_font_size = 20
+text = "Thanks for playing my game,
+If you want, leave a comment, a suggestion, anything will help.
+This will help to make new levels, items, enemies and more!
+
+Peoples who helped making this possible:
+
+Garoto Polvo (@squid_guy1): Game Ideas
+
+Gatito (sonicss1): Ideas
+𝓤𝓶𝓪 𝓟𝓮𝓼𝓼𝓸𝓪 (@guilhermin22): Game Design Ideas.
+
+Brackeys (@Brackeys): Game Jam.
+
+Maestro (@maestrosz): Supporting me and watching me the entire time.
+
+
+You. Yes, You. Thanks for playing my game and making my dream possible."
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 925.0
+offset_top = 625.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_fonts/normal_font = ExtResource("1_ytuxx")
+text = "Press any button to skip."

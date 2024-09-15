@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://ycoiux05xh2r"]
+
+[ext_resource type="Texture2D" uid="uid://bfe2oohhe7xk5" path="res://Sprites/sawblade.png" id="1_ej8bq"]
+
+[sub_resource type="GDScript" id="GDScript_ffvqp"]
+resource_name = "Sawblade"
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	self.rotation += 0.1
+"
+
+[node name="Sawblade" type="Sprite2D"]
+position = Vector2(770, 422)
+scale = Vector2(5, 5)
+texture = ExtResource("1_ej8bq")
+script = SubResource("GDScript_ffvqp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(1.5, -7.5, 1.5, -6.5, 0.5, -6.5, 0.5, -5.5, -0.5, -5.5, -0.5, -4.5, -1.5, -4.5, -1.5, -3.5, -6.5, -3.5, -6.5, -2.5, -7.5, -2.5, -7.5, -1.5, -6.5, -1.5, -6.5, -0.5, -5.5, -0.5, -5.5, 0.5, -4.5, 0.5, -4.5, 1.5, -3.5, 1.5, -3.5, 6.5, -2.5, 6.5, -2.5, 7.5, -1.5, 7.5, -1.5, 6.5, -0.5, 6.5, -0.5, 5.5, 0.5, 5.5, 0.5, 4.5, 1.5, 4.5, 1.5, 3.5, 6.5, 3.5, 6.5, 2.5, 7.5, 2.5, 7.5, 1.5, 6.5, 1.5, 6.5, 0.5, 5.5, 0.5, 5.5, -0.5, 4.5, -0.5, 4.5, -1.5, 3.5, -1.5, 3.5, -6.5, 2.5, -6.5, 2.5, -7.5)
